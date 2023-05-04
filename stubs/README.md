@@ -3,7 +3,7 @@
 
 ## Installation
 ```shell
-yarn add @{{{{username}}}}/{{{{packageName}}}}
+yarn add @{{{{organizationName}}}}/{{{{packageName}}}}
 ```
 
 ## Usage

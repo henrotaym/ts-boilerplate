@@ -11,11 +11,11 @@ const useStubsPath = usePackageStubsPath("@henrotaym/ts-boilerplate");
 
 const useScaffolding = () => {
   const generator = useGenerator({
-    username: usePrompt("username"),
-    packageName: usePrompt("packageName"),
-    description: usePrompt("description"),
-    authorName: usePrompt("authorName"),
-    authorEmail: usePrompt("authorEmail"),
+    organizationName: usePrompt("Organization name"),
+    packageName: usePrompt("Package name"),
+    description: usePrompt("Package description"),
+    authorName: usePrompt("Author full name (first_name last_name)"),
+    authorEmail: usePrompt("Author email"),
   });
 
   generator.copy(useStubsPath(), useCurrentPath());

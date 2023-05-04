@@ -1,5 +1,5 @@
 {
-  "name": "@{{{{username}}}}/{{{{packageName}}}}",
+  "name": "@{{{{organizationName}}}}/{{{{packageName}}}}",
   "version": "1.0.0",
   "description": "{{{{description}}}}",
   "main": "dist/index.js",
@@ -17,14 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/{{{{username}}}}/{{{{packageName}}}}.git"
+    "url": "git+https://github.com/{{{{organizationName}}}}/{{{{packageName}}}}.git"
   },
   "author": "{{{{authorName}}}} <{{{{authorEmail}}}}>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/{{{{username}}}}/{{{{packageName}}}}/issues"
+    "url": "https://github.com/{{{{organizationName}}}}/{{{{packageName}}}}/issues"
   },
-  "homepage": "https://github.com/{{{{username}}}}/{{{{packageName}}}}#readme",
+  "homepage": "https://github.com/{{{{organizationName}}}}/{{{{packageName}}}}#readme",
   "devDependencies": {
     "@types/mustache": "^4.2.2",
     "@types/node": "^18.16.3",
