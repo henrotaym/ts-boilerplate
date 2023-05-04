@@ -1,5 +1,5 @@
 {
-  "name": "@henrotaym/scaffolding-boilerplate",
+  "name": "@henrotaym/ts-boilerplate",
   "version": "1.0.0",
   "description": "scaffolding boilerplate",
   "main": "dist/index.js",
@@ -17,14 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/henrotaym/scaffolding-boilerplate.git"
+    "url": "git+https://github.com/henrotaym/ts-boilerplate.git"
   },
   "author": "Henrotay Mathieu <mathieu.henrotay@gmail.be>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/henrotaym/scaffolding-boilerplate/issues"
+    "url": "https://github.com/henrotaym/ts-boilerplate/issues"
   },
-  "homepage": "https://github.com/henrotaym/scaffolding-boilerplate#readme",
+  "homepage": "https://github.com/henrotaym/ts-boilerplate#readme",
   "devDependencies": {
     "@henrotaym/scaffolding-utils": "^1.0.0",
     "@types/mustache": "^4.2.2",

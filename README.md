@@ -1,8 +1,8 @@
-# scaffolding-boilerplate
+# ts-boilerplate
 
 ## Installation
 ```shell
-yarn add @henrotaym/scaffolding-boilerplate -D
+yarn add @henrotaym/ts-boilerplate -D
 ```
 
 ## Usage

@@ -7,7 +7,7 @@ import {
   usePrompt,
 } from "@henrotaym/scaffolding-utils";
 
-const useStubsPath = usePackageStubsPath("@henrotaym/scaffolding-boilerplate");
+const useStubsPath = usePackageStubsPath("@henrotaym/ts-boilerplate");
 
 const useScaffolding = () => {
   const generator = useGenerator({
