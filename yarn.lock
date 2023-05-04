@@ -34,10 +34,10 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.39.0.tgz#58b536bcc843f4cd1e02a7e6171da5c040f4d44b"
   integrity sha512-kf9RB0Fg7NZfap83B3QOqOGg9QmD9yBudqQXzzOtn3i4y7ZUXe5ONeW34Gwi+TxhH4mvj72R1Zc300KUMa9Bng==
 
-"@henrotaym/scaffolding-utils@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@henrotaym/scaffolding-utils/-/scaffolding-utils-1.0.0.tgz#a8241898e5be375a0f3e20b5b55a7f2e8ddd42be"
-  integrity sha512-8e4lvo8fHNb8fIaIXshmmlRgFKdRrTjeIWtWYZkFqEEeNpYBZyN/TFGTQFywO3OiAw3APKuiXrmVIcQYYBoM6w==
+"@henrotaym/scaffolding-utils@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@henrotaym/scaffolding-utils/-/scaffolding-utils-1.0.1.tgz#0258e60c5c5c3fd978d7201ea29e9a0d0807e46e"
+  integrity sha512-QyRoIg/h6B3L01SJBiM9pbOOs+g4VAmyDpmvlWmSFf5N/VHSEAbS6dG74j/umpggJNmQb5i/KYz9bYFMCQbC7g==
   dependencies:
     mustache "^4.2.0"
     prompt-sync "^4.2.0"
