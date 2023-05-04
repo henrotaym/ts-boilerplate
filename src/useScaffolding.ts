@@ -6,6 +6,10 @@ import {
   usePackageStubsPath,
   usePrompt,
 } from "@henrotaym/scaffolding-utils";
+import { execSync } from "child_process";
+
+execSync("yarn init -y");
+execSync("yarn add @henrotaym/ts-boilerplate -D");
 
 const useStubsPath = usePackageStubsPath("@henrotaym/ts-boilerplate");
 
