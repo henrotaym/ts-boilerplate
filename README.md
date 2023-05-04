@@ -10,11 +10,11 @@ yarn add @henrotaym/ts-boilerplate -D
 
 ## Development
 ```shell
-./cli bootstrap // bootstrap project
-./cli yarn install // install dependencies
-./cli start // start project
-./cli stop // stop project
-./cli restart // restart project
-./cli publish // publish package
-./cli version patch // change package version
+./cli bootstrap #bootstrap project
+./cli yarn install #install dependencies
+./cli start #start project
+./cli stop #stop project
+./cli restart  #restart project
+./cli publish #publish package
+./cli version patch #change package version
 ```
