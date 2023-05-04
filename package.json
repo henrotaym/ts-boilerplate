@@ -5,8 +5,12 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "stubs"
   ],
+  "bin": {
+    "ts-boilerplate": "./bin/ts-boilerplate"
+  },
   "scripts": {
     "lint": "eslint . --fix",
     "format": "prettier --write \"src/**/*\"",
