@@ -27,3 +27,5 @@ USER node
 WORKDIR /app
 
 COPY --chown=node:node --from=builder /app ./
+
+CMD yarn dev

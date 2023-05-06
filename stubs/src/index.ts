@@ -1,2 +1,3 @@
 // Silence is golder 🤫
-export default {}
+import "./index.css";
+export default {};
