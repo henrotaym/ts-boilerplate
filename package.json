@@ -20,12 +20,11 @@
   },
   "scripts": {
     "dev": "vite",
-    "lint": "eslint . --fix",
+    "lint": "tsc && eslint . --fix",
     "format": "prettier --write \"src/**/*\"",
     "validate": "yarn lint && yarn format",
-    "build": "yarn validate && tsup",
-    "version": "yarn format && git add -A src",
-    "postversion": "git push && git push --tags && npm publish"
+    "build": "tsup",
+    "release": "yarn build && changeset publish"
   },
   "repository": {
     "type": "git",
@@ -38,6 +37,7 @@
   },
   "homepage": "https://github.com/henrotaym/ts-boilerplate#readme",
   "devDependencies": {
+    "@changesets/cli": "^2.26.1",
     "@types/mustache": "^4.2.2",
     "@types/node": "^18.16.3",
     "@types/prompt-sync": "^4.2.0",
