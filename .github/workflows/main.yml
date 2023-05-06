@@ -15,4 +15,4 @@ jobs:
           cache: "yarn"
 
       - run: yarn install --frozen-lockfile
-      - run: yarn lint && yarn build
+      - run: yarn validate && yarn build
