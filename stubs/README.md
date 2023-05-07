@@ -16,6 +16,4 @@ yarn add @{{{{organizationName}}}}/{{{{packageName}}}}
 ./cli start #start project
 ./cli stop #stop project
 ./cli restart  #restart project
-./cli publish #publish package
-./cli version patch #change package version
 ```

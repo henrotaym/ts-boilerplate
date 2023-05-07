@@ -8,4 +8,5 @@ export default defineConfig({
   splitting: true,
   shims: true,
   minify: true,
+  sourcemap: true
 });
