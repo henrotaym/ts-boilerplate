@@ -28,6 +28,7 @@
     "node_modules",
     "**/__tests__/*",
     "bin",
-    "dist"
+    "dist",
+    "stubs"
   ]
 }
