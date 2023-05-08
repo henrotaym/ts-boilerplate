@@ -1,5 +1,11 @@
 # @henrotaym/ts-boilerplate
 
+## 1.0.8
+
+### Patch Changes
+
+- 8b219b6: Wrong package name for package path.
+
 ## 1.0.7
 
 ### Patch Changes
