@@ -1,12 +1,9 @@
 # ts-boilerplate
 
-## Installation
-```shell
-yarn add @henrotaym/ts-boilerplate -D
-```
-
 ## Usage
-<!-- @TODO -->
+```shell
+npx @henrotaym/ts-boilerplate@latest
+```
 
 ## Development
 ```shell
@@ -15,6 +12,4 @@ yarn add @henrotaym/ts-boilerplate -D
 ./cli start #start project
 ./cli stop #stop project
 ./cli restart  #restart project
-./cli publish #publish package
-./cli version patch #change package version
 ```
