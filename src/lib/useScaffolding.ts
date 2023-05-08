@@ -8,9 +8,12 @@ import {
   useSentence,
 } from "@henrotaym/scaffolding-utils";
 
-const useStubsPath = usePackageStubsPath("@henrotaymcorp/vue-boilerplate");
+const useStubsPath = usePackageStubsPath("@henrotaym/ts-boilerplate");
 
 const useScaffolding = () => {
+  useSentence("Hi there 👋");
+  useSentence("Let's scaffold a new typescript project 🎉");
+
   const folder = usePrompt("Folder location [.]", ".");
   const location = useCurrentPath(folder);
   const lastFolderLocationName = location.split("/").slice(-1)[0];
@@ -49,13 +52,13 @@ const useScaffolding = () => {
   };
 
   useDisplayJson({ location, ...data });
-  const sayBye = () => useSentence("Happy coding, see you soon 👋");
 
   const isConfirmed = useConfirm("Is it correct ? ");
 
   if (!isConfirmed) {
     useSentence("Scaffolding was cancelled ❌");
-    return sayBye();
+    useSentence("Come back when you're ready 😎");
+    return;
   }
 
   const generator = useGenerator(data);
@@ -63,7 +66,7 @@ const useScaffolding = () => {
   generator.copy(useStubsPath(), location);
 
   useSentence("Successfully scaffolded project ✅");
-  sayBye();
+  useSentence("Happy coding 🍺");
 };
 
 export default useScaffolding;
