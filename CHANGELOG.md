@@ -1,5 +1,11 @@
 # @henrotaym/ts-boilerplate
 
+## 1.0.9
+
+### Patch Changes
+
+- 231784f: Fixing CI (release running only when linter is fine on main branch)
+
 ## 1.0.8
 
 ### Patch Changes
