@@ -1,5 +1,11 @@
 # @henrotaym/ts-boilerplate
 
+## 1.0.10
+
+### Patch Changes
+
+- d1b8dae: Messed up npm token.
+
 ## 1.0.9
 
 ### Patch Changes
