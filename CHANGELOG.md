@@ -1,5 +1,11 @@
 # @henrotaym/ts-boilerplate
 
+## 1.1.0
+
+### Minor Changes
+
+- 5b755fb: Adding tests to stubs.
+
 ## 1.0.10
 
 ### Patch Changes
