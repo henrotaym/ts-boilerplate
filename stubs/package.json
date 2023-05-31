@@ -24,7 +24,8 @@
     "format": "prettier --write \"src/**/*\"",
     "validate": "yarn lint && yarn format",
     "build": "tsup",
-    "release": "yarn build && changeset publish"
+    "release": "yarn build && changeset publish",
+    "test": "vitest"
   },
   "repository": {
     "type": "git",
@@ -51,6 +52,7 @@
     "tsup": "^6.7.0",
     "typescript": "^5.0.4",
     "vite": "^4.3.2",
-    "vite-plugin-eslint": "^1.8.1"
+    "vite-plugin-eslint": "^1.8.1",
+    "vitest": "^0.31.2"
   }
 }
