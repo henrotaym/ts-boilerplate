@@ -1,5 +1,16 @@
 # @henrotaym/ts-boilerplate
 
+## 1.2.0
+
+### Minor Changes
+
+- 9bb6687: Updating to node 18 & slack notification about workflow state
+
+### Patch Changes
+
+- 168e9a3: Updating CLI & husky commit hooks.
+- 748f2bd: Updating tsconfig file.
+
 ## 1.1.0
 
 ### Minor Changes
