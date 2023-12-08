@@ -1,10 +1,24 @@
-version: '3'
+version: '3.4'
+name: {{{{packageName}}}}
 services:
   app:
+    container_name: {{{{packageName}}}}-app
     build:
       context: .
       target: runner
-    volumes:
-      - ./:/app
+    image: {{{{packageName}}}}-app-local
     ports:
       - ${VITE_PORT:-8000}:${VITE_PORT:-8000}
+    volumes:
+      - ./:/usr/src/app
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.{{{{packageName}}}}.tls=true
+      - traefik.http.routers.{{{{packageName}}}}.rule=Host("{{{{packageName}}}}.docker.localhost")
+      - traefik.http.services.{{{{packageName}}}}.loadbalancer.server.port=${APP_PORT:-3000}
+    networks:
+      - applications
+networks:
+    applications:
+        name: applications
+        external: true
