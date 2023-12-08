@@ -1,5 +1,11 @@
 # @henrotaym/ts-boilerplate
 
+## 1.2.1
+
+### Patch Changes
+
+- 64d6c79: Fixing package with playground scaffolding.
+
 ## 1.2.0
 
 ### Minor Changes
