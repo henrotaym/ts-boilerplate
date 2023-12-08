@@ -1,4 +1,4 @@
-FROM node:16-alpine as deps
+FROM node:18-alpine as deps
 
 USER node
 
@@ -7,6 +7,10 @@ WORKDIR /app
 COPY --chown=node:node package.json yarn.lock ./
 
 RUN yarn install --frozen-lockfile --ignore-scripts
+
+COPY --chown=node:node . .
+
+RUN yarn install --frozen-lockfile
 
 # BUILDER
 FROM deps as builder

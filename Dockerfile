@@ -1,4 +1,4 @@
-FROM node:16-alpine as deps
+FROM node:18-alpine as deps
 
 USER node
 
