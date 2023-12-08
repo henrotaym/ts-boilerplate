@@ -1,3 +1,4 @@
 #!/bin/bash
 
-docker-compose up $*
+./scripts/set_env.sh && \
+docker-compose up -d $*

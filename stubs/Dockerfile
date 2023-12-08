@@ -2,7 +2,7 @@ FROM node:18-alpine as deps
 
 USER node
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
 COPY --chown=node:node package.json yarn.lock ./
 
@@ -17,9 +17,9 @@ FROM deps as builder
 
 USER node
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
-COPY --from=deps --chown=node:node /app/node_modules ./node_modules
+COPY --from=deps --chown=node:node /usr/src/app/node_modules ./node_modules
 
 COPY --chown=node:node . .
 
@@ -28,8 +28,8 @@ FROM builder as runner
 
 USER node
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
-COPY --chown=node:node --from=builder /app ./
+COPY --chown=node:node --from=builder /usr/src/app ./
 
 CMD yarn dev

@@ -21,7 +21,7 @@
   "scripts": {
     "dev": "vite",
     "lint": "tsc && eslint . --fix",
-    "format": "prettier --write .",
+    "format": "prettier . --write",
     "validate": "yarn lint && yarn format",
     "build": "tsup",
     "release": "yarn build && changeset publish",

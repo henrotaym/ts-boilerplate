@@ -12,58 +12,36 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Checkout repository
+      - name: Checkout repository
         uses: actions/checkout@v3
-      -
-        name: Retrieve slack users
+      - name: Retrieve slack users
         id: slack_users
         uses: deegitalbe/github-action-trustup-io-slack-users@v1
         with:
           username: ${{ github.triggering_actor }}
-      -
-        name: Prepare Terraform variables
+      - name: Prepare Terraform variables
         id: terraform_variables
         uses: henrotaym/prepare-terraform-variables-action@v3
         with:
           app_key: ${{ github.event.repository.name }}
           github_branch: ${{ github.ref }}
-      # -
-      #   name: Notify in progress
-      #   uses: rtCamp/action-slack-notify@v2
-      #   env:
-      #     SLACK_USERNAME: TrustUp.IO
-      #     SLACK_ICON: "https://avatars.slack-edge.com/2022-11-24/4423352230964_495f6791123bff9ca3ef_512.png"
-      #     SLACK_TITLE: "${{ steps.terraform_variables.outputs.trustup_app_key }} (package))"
-      #     SLACK_MESSAGE: "🏷️ Publishing in progress\n${{ steps.slack_users.outputs.user_mention }}\n${{ github.event.head_commit.message }}\n<https://${{ steps.terraform_variables.outputs.app_url }}|See application>"
-      #     SLACK_COLOR: "#F7BE0B"
-      #     SLACK_FOOTER: "Powered by automated github action"
-      #     SLACK_WEBHOOK: ${{ secrets.SLACK_DEPLOY_WEBHOOK_URL }}
-      - 
-        name: Setup Node.js 18
+      - name: Setup Node.js 18
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
-      - 
-        name: Install Dependencies
-        run: 
-          yarn install --frozen-lockfile
-      -
-        name: Lint code
-        run:
-          yarn lint
-      - 
-        name: Create Release Pull Request
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+      - name: Lint code
+        run: yarn lint
+      - name: Create Release Pull Request
         uses: changesets/action@v1
         id: changesets
         with:
-          publish:
-            yarn release
+          publish: yarn release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      -
-        name: Notify failure
+      - name: Notify failure
         if: ${{ failure() }}
         uses: rtCamp/action-slack-notify@v2
         env:
@@ -74,8 +52,7 @@ jobs:
           SLACK_COLOR: "#F8312F"
           SLACK_FOOTER: "Powered by automated github action"
           SLACK_WEBHOOK: ${{ secrets.SLACK_DEPLOY_WEBHOOK_URL }}
-      -
-        name: "Notify cancellation"
+      - name: "Notify cancellation"
         if: ${{ cancelled() }}
         uses: rtCamp/action-slack-notify@v2
         env:
@@ -86,24 +63,24 @@ jobs:
           SLACK_COLOR: "#d1d5db"
           SLACK_FOOTER: "Powered by automated github action"
           SLACK_WEBHOOK: ${{ secrets.SLACK_DEPLOY_WEBHOOK_URL }}
-      -
-        name: "Notify publication"
-        if: steps.changesets.outputs.published
+      - name: "Notify publication"
+        if: steps.changesets.outputs.published == 'true'
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_USERNAME: TrustUp.IO
           SLACK_ICON: "https://avatars.slack-edge.com/2022-11-24/4423352230964_495f6791123bff9ca3ef_512.png"
           SLACK_TITLE: "${{ steps.terraform_variables.outputs.trustup_app_key }} (package)"
-          SLACK_MESSAGE: "🏷️ Version ${{steps.changesets.outputs.publishedPackages[0].version}} published\n${{ steps.slack_users.outputs.user_mention }}\n${{ github.event.head_commit.message }}\n<https://${{ steps.terraform_variables.outputs.app_url }}"
+          SLACK_MESSAGE: "🏷️ ${{fromJson(steps.changesets.outputs.publishedPackages)[0].version}} version published\n${{ steps.slack_users.outputs.user_mention }}\n${{ github.event.head_commit.message }}"
+          SLACK_FOOTER: "Powered by automated github action"
           SLACK_WEBHOOK: ${{ secrets.SLACK_DEPLOY_WEBHOOK_URL }}
-      -
-        name: "Notify pull request"
-        if: steps.changesets.outputs.pullRequestNumber
+      - name: "Notify pull request"
+        if: steps.changesets.outputs.pullRequestNumber >= '1'
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_USERNAME: TrustUp.IO
           SLACK_ICON: "https://avatars.slack-edge.com/2022-11-24/4423352230964_495f6791123bff9ca3ef_512.png"
           SLACK_TITLE: "${{ steps.terraform_variables.outputs.trustup_app_key }} (package)"
           SLACK_MESSAGE: "Approve pull request to publish\n${{ steps.slack_users.outputs.user_mention }}\n${{ github.event.head_commit.message }}\n<${{ github.server_url }}/${{ github.repository }}/pull/${{ steps.changesets.outputs.pullRequestNumber }}|See details>"
+          SLACK_COLOR: "#92dce5"
+          SLACK_FOOTER: "Powered by automated github action"
           SLACK_WEBHOOK: ${{ secrets.SLACK_DEPLOY_WEBHOOK_URL }}
-
