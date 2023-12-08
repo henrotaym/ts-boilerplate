@@ -1,6 +1,6 @@
 {
   "name": "@henrotaym/ts-boilerplate",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "scaffolding boilerplate",
   "files": [
     "dist",
