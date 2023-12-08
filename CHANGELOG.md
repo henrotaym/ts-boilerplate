@@ -1,5 +1,11 @@
 # @henrotaym/ts-boilerplate
 
+## 1.2.2
+
+### Patch Changes
+
+- f1e8317: Messed up with traffic loadbalancer placeholder
+
 ## 1.2.1
 
 ### Patch Changes
