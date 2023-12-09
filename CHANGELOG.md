@@ -1,5 +1,11 @@
 # @henrotaym/ts-boilerplate
 
+## 1.2.3
+
+### Patch Changes
+
+- 2a4b867: Ignoring .env files.
+
 ## 1.2.2
 
 ### Patch Changes
